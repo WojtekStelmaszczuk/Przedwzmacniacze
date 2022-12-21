@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" rel="stylesheet" href="assets/css/style.css">   
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.css" rel="stylesheet"/>
+    <!--- AOS.js-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    
+</head>
+<body>
+    <header>
+      <p>Projekt Dyplomowy Inżynierski</p>
+
+      <div class="navbar">
+        <a href="index.html">Techniki Mikrofonowe</a>
+		<a href="tele1.html">Fortepian PM40</a>
+		<a href="tele2.html">Fortepian AKG</a>
+		<a href="tele3.html">Gitara Elektryczna Royer</a>
+		<a href="tele4.html">Gitara Elektryczna Shure</a>
+    </div>
+    </header>
+
+      <div class="main">
+    
+      
+      <!--- Kontener z zawartością strony --->
+      <div class="kont">
+
+            <!--- Nazwa mikrofonu --->
+        <div class="container">
+          <p id="microphone">title.mp3</p>
+        </div>
+        
+
+        <!--- Sekcja z obrazkami (podzielone na kolumny) --->
+        <div class="container"> 
+          <div class="row">
+            <div class="col-md" id="cf7">
+              <img class ="opaque" src="MicPictures/Preamp/apollo_x8.png"/>
+              <img src="MicPictures/Preamp/Helios_type_69.png" />
+              <img src="MicPictures/Preamp/V76.png" />
+              <img src="MicPictures/Preamp/610A.png" />
+              <img src="MicPictures/Preamp/610B.png" />
+              <img src="MicPictures/Preamp/Avalon.png" />
+            </div>
+            <div class="col-md shorter-img">
+              <img id="mic_image">
+            </div>
+            <div class="col-md" id="cf8">
+              <img class ="opaque1" src="MicPictures/Preamp/Shure_ustawienie.jpg"/>
+              <img src="MicPictures/Preamp/Shure_ustawienie.jpg" />
+              <img src="MicPictures/Preamp/Shure_ustawienie.jpg" />
+              <img src="MicPictures/Preamp/Shure_ustawienie.jpg" />
+              <img src="MicPictures/Preamp/Shure_ustawienie.jpg" />
+              <img src="MicPictures/Preamp/Shure_ustawienie.jpg" />
+            </div>
+          </div>
+        </div>  
+        
+
+              <!-- Wybór techniki mikrofonowej i mikrofonu-->
+        <div class="dropdown text-center" id="cf7_controls"  style="margin-top: 15px;">
+          <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown" aria-expanded="false">
+            Wybierz Przedwzmacniacz
+          </button>
+          <ul class="dropdown-menu" id="cf8_controls" aria-labelledby="dropdownMenuButton">
+            <span class="selected"><li><a class="dropdown-item" href="#" id="Apollo">Apollo x8</a> </li></span>
+            <span><li><a class="dropdown-item" href="#" id="Helios">Helios Type 69</a> </li></span>
+            <span><li><a class="dropdown-item" href="#" id="V76">V76</a> </li></span>
+            <span><li><a class="dropdown-item" href="#" id="610A">UA-610 A</a> </li></span>
+            <span><li><a class="dropdown-item" href="#" id="610B">UA 610-B</a> </li></span>
+            <span><li><a class="dropdown-item" href="#" id="Avalon">Avalon VT-737sp</a> </li></span>
+          </ul>
+        </div>
+		
+            
+
+        <!--- Część środkowa, zawierająca przycisk play/pause --->
+        <div class="container" style="background-color: rgba(61, 59, 59, 0.555); border-radius: 25px; box-shadow: 2px solid #000;">
+        <div class="middle">
+            <button onclick="justplay()" id="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+        </div>
+
+        <!--- Część zawierająca suwaki głośności i przewijania --->
+        
+        <div class="duration">
+          <input type="range" min="0" max="100" value="0" id="duration_slider" onchange="change_duration()">
+        </div>
+        
+        <div class="volume">
+        <p id="volume_show">90</p>
+        <i class="fa fa-volume-up" aria-hidden="true" onclick="mute_sound()" id="volume_icon"></i>
+        <input type="range" min="0" max="100" value="90" onchange="volume_change()" id="volume">  
+        </div>
+
+
+
+        
+          xx
+       
+    
+      </div>
+      <footer>
+        <div class="container" style="color:white">
+        <p><b>Autorzy tej sekcji:</b></p>
+		<p>Patryk Kosior</p>
+		<p>Wojciech Stelmaszczuk</p>
+        <p><b>Autorzy Oryginalnej Strony:</b></p>
+        <p>Mateusz Gorczyński 175493</p>
+        <p>Łukasz Raczkowski 176014</p>
+        <p>Nagrań dokonano w studio nagraniowym Lunar Sounds na Nowym Porcie w Gdańsku</p>
+      </div>
+      </footer>
+    </div>
+    
+<!--- Main.js --->
+<script src="assets/js/tele4.js"></script>
+
+<script>
+      $(document).ready(function(){
+        $('.dropdown-submenu a.test').on("click", function(e){
+          $(this).next('ul').toggle();
+          e.stopPropagation();
+          e.preventDefault();
+        });
+      });
+  </script>
+<!--- End of Main.js ---> 
+
+<!-- MDB -->
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.js"
+></script>
+<!--- AOS.js-->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+
+<script>
+  $(document).ready(function() {
+    $("#cf7_controls").on('click', 'span', function() {
+      $("#cf7 img").removeClass("opaque");
+  
+      var newImage = $(this).index();
+  
+      $("#cf7 img").eq(newImage).addClass("opaque");
+  
+      $("#cf7_controls span").removeClass("selected");
+      $(this).addClass("selected");
+    });
+  });
+  
+    </script>
+
+<script>
+  $(document).ready(function() {
+    $("#cf8_controls").on('click', 'span', function() {
+      $("#cf8 img").removeClass("opaque1");
+  
+      var newImage = $(this).index();
+  
+      $("#cf8 img").eq(newImage).addClass("opaque1");
+  
+      $("#cf8_controls span").removeClass("selected");
+      $(this).addClass("selected");
+    });
+  });
+  
+    </script>
+
+
+
+
+ 
+</body>
+  
+</html>
+
